@@ -70,3 +70,26 @@ getUsers is called, from : 100, to : 200, orderBy[age, name]
 URI Pattern : “users/query”
 
 getUsers is called, from : 1000, to : 999, orderBy[name]
+
+
+Example : 4 JAX-RS @MatrixParam 
+
+@PathParam("year") String year
+@MatrixParam("author") String author
+
+See following URI patterns and result.
+
+1. URI Pattern : “/books/2011/”
+
+getBooks is called, year : 2011, author : null, country : null
+2. URI Pattern : “/books/2011;author=krishna”
+
+getBooks is called, year : 2011, author : krishna, country : null
+
+3. URI Pattern : “/books/2011;author=krishna;country=malaysia”
+
+getBooks is called, year : 2011, author : krishna, country : malaysia
+
+4. URI Pattern : “/books/2011;country=malaysia;author=krishna”
+
+getBooks is called, year : 2011, author : krishna, country : malaysia
