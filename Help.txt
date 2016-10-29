@@ -170,3 +170,17 @@ Example : 8 Download image file from JAX-RS
 Deploy above JAX-RS service, access this URI pattern : “/file/get“.
 
 Figure : Image File “D:\\test.png” from server is prompt for user to download, with a new file name “file_from_server.png"
+
+Example : 9 Example to output pdf file for user to download.
+
+	@GET
+	@Path("/get")
+	@Produces("application/pdf")
+	public Response getFile() {
+
+		File file = new File(FILE_PATH);
+
+		ResponseBuilder response = Response.ok((Object) file);
+		response.header("Content-Disposition",
+				"attachment; filename=new-android-book.pdf");
+		return response.build();
