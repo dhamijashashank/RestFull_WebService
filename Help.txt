@@ -54,3 +54,19 @@ getUserById is called, id : 22667788
 URI Pattern : “/users/2011/06/30”
 
 getUserHistory is called, year/month/day : 2011/6/30
+
+
+Example: 3 : JAX-RS-QueryParam-Example 
+
+using @QueryParam , @Context UriInfo info , @DefaultValue("1000") @QueryParam("from") int from
+
+
+URI Pattern : “users/query?from=100&to=200&orderBy=age&orderBy=name”
+
+getUsers is called, from : 100, to : 200, orderBy[age, name]
+
+
+
+URI Pattern : “users/query”
+
+getUsers is called, from : 1000, to : 999, orderBy[name]
