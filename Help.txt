@@ -137,3 +137,17 @@ for(String header : headers.getRequestHeaders().keySet()){
 
 
 
+Example : 7 Download text file from JAX-RS
+
+@Produces("text/plain")
+
+File file = new File(FILE_PATH);
+
+		ResponseBuilder response = Response.ok((Object) file);
+		response.header("Content-Disposition",
+			"attachment; filename=\"file_from_server.log\"");
+		return response.build();
+
+Deploy above JAX-RS service, access this URI pattern : “/file/get“.
+
+Figure : Text file “c:\\test.log” from server is prompt for user to download, with a new file name “file_from_server.log“
