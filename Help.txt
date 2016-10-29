@@ -9,3 +9,36 @@ Previously face following issue :
 Class Not Found Exception : Cause of com.sun.jersey.spi.container.servlet.ServletContainer
 
 Sol: Not able to find root cause , after replacing all (eclipse , jdk , tomcat ) its running fine
+
+
+Example 1: JAX-RS @Path URI matching example
+
+URI pattern : “/users”
+
+getUser is called
+URI pattern : “/users/vip”
+
+getUserVIP is called
+
+URI Pattern : “/users/mkyong”
+
+getUserByName is called, name : mkyong
+URI Pattern : “/users/abcdefg”
+
+getUserByName is called, name : abcdefg
+
+URI Pattern : “/users/999”
+
+getUserById is called, id : 999
+URI Pattern : “/users/123456”
+
+getUserById is called, id : 123456
+URI Pattern : “/users/username/aaa” , failed, don’t match “[a-zA-Z][a-zA-Z_0-9]”, first character need “[a-zA-Z]”, second character need “[a-zA-Z_0-9]”.
+
+Could not find resource for relative : /users/username/aaa
+URI Pattern : “/users/username/a9”
+
+getUserByUserName is called, username : a9
+URI Pattern : “users/books/999”
+
+getUserBookByISBN is called, isbn : 999
