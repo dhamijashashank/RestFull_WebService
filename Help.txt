@@ -110,3 +110,24 @@ Access HTML Page. URL :  http://localhost:8080/RESTfulExample_5_FormParam/UserFo
 When “add user” button is clicked, it will redirect to URL : http://localhost:8080/RESTfulExample_5_FormParam/rest/user/add
 
 addUser is called, name : krishna, age : 199
+
+
+Example : 6 
+
+@HeaderParam("user-agent") String userAgent
+@Context HttpHeaders headers
+
+String userAgent = headers.getRequestHeader("user-agent").get(0);
+
+sample of response 
+return Response.status(200).entity("addUser is called, userAgent : " + userAgent).build();
+
+if we change status code output also changed like if we pass code 404 output page show : page not found error
+
+http://localhost:8080/RESTfulExample_6_HTTP_Header/users/get
+
+
+addUser is called, userAgent : Mozilla/5.0 (Windows NT 6.2; Win64; x64; Trident/7.0; rv:11.0) like Gecko
+
+
+
