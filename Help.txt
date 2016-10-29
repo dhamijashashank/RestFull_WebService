@@ -150,4 +150,23 @@ File file = new File(FILE_PATH);
 
 Deploy above JAX-RS service, access this URI pattern : “/file/get“.
 
-Figure : Text file “c:\\test.log” from server is prompt for user to download, with a new file name “file_from_server.log“
+Figure : Text file “D:\\test.log” from server is prompt for user to download, with a new file name “file_from_server.log“
+
+
+Example : 8 Download image file from JAX-RS
+
+@GET
+	@Path("/get")
+	@Produces("image/png")
+	public Response getFile() {
+
+		File file = new File(FILE_PATH);
+
+		ResponseBuilder response = Response.ok((Object) file);
+		response.header("Content-Disposition",
+				"attachment; filename=image_from_server.png");
+		return response.build();
+
+Deploy above JAX-RS service, access this URI pattern : “/file/get“.
+
+Figure : Image File “D:\\test.png” from server is prompt for user to download, with a new file name “file_from_server.png"
