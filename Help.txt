@@ -42,3 +42,15 @@ getUserByUserName is called, username : a9
 URI Pattern : “users/books/999”
 
 getUserBookByISBN is called, isbn : 999
+
+Example 2: JAX-RS @PathParam example Single PathParam and MultiPath Param
+
+In above example, the value of {id} from “/users/{id}” will match to “@PathParam(“id”) String var“.
+
+URI Pattern : “/users/22667788”
+
+getUserById is called, id : 22667788
+
+URI Pattern : “/users/2011/06/30”
+
+getUserHistory is called, year/month/day : 2011/6/30
