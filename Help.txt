@@ -93,3 +93,20 @@ getBooks is called, year : 2011, author : krishna, country : malaysia
 4. URI Pattern : “/books/2011;country=malaysia;author=krishna”
 
 getBooks is called, year : 2011, author : krishna, country : malaysia
+
+Example : 5 JAX-RS @FormParam
+
+Difference from previous code in web.xml
+
+	<context-param>
+		<param-name>resteasy.servlet.mapping.prefix</param-name>
+		<param-value>/rest</param-value>
+	</context-param>
+
+New annotation used is @FormParam("name") String name
+
+Access HTML Page. URL :  http://localhost:8080/RESTfulExample_5_FormParam/UserForm.html
+
+When “add user” button is clicked, it will redirect to URL : http://localhost:8080/RESTfulExample_5_FormParam/rest/user/add
+
+addUser is called, name : krishna, age : 199
