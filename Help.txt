@@ -129,5 +129,11 @@ http://localhost:8080/RESTfulExample_6_HTTP_Header/users/get
 
 addUser is called, userAgent : Mozilla/5.0 (Windows NT 6.2; Win64; x64; Trident/7.0; rv:11.0) like Gecko
 
+List all request headers 
+You can list all available HTTP request headers via following code :
+for(String header : headers.getRequestHeaders().keySet()){
+	System.out.println(header);
+}
+
 
 
