@@ -1,0 +1,11 @@
+This Code Run/ Test on following combination:
+
+1.Eclipse	: Neon.1a Release (4.6.1)
+2. jdk		: jdk1.8.0_102
+3. Tomcat	: apache-tomcat-6.0.37
+
+
+Previously face following issue : 
+Class Not Found Exception : Cause of com.sun.jersey.spi.container.servlet.ServletContainer
+
+Sol: Not able to find root cause , after replacing all (eclipse , jdk , tomcat ) its running fine
