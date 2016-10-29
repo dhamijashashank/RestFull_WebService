@@ -184,3 +184,16 @@ Example : 9 Example to output pdf file for user to download.
 		response.header("Content-Disposition",
 				"attachment; filename=new-android-book.pdf");
 		return response.build();
+Example :10 Example to output excel file for user to download.
+
+	@GET
+	@Path("/get")
+	@Produces("application/vnd.ms-excel")
+	public Response getFile() {
+
+		File file = new File(FILE_PATH);
+
+		ResponseBuilder response = Response.ok((Object) file);
+		response.header("Content-Disposition",
+				"attachment; filename=new-excel-file.xlsx");
+		return response.build();
